@@ -1,0 +1,187 @@
+1. Circle
+
+Class:
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AssignmentLib
+{
+    public class Circle
+    {
+            public double radius;
+        public void SetRadius(double radius)
+        {
+            this.radius = radius;
+        }
+        public double GetRadius()
+        {
+            return radius;
+        }
+        public double calcDiameter()
+        {
+            return 2 * radius;
+        }
+        public double calArea()
+        {
+            return 3.14 * radius * radius;
+        }
+       
+    }
+}
+
+Main method:
+ private static void Circle()
+        {
+            Circle cp = new Circle();
+            cp.radius = 12;
+            Console.WriteLine("The radius of circle " + cp.GetRadius());
+            Console.WriteLine("The Diameter of circle " + cp.calcDiameter());
+            Console.WriteLine("The Area of circle " + cp.calArea());
+
+        }
+
+2. BankAccount
+
+Class:
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AssignmentLib
+{
+    public class EmpBankAccount
+    {
+        public int salary;
+        public EmpBankAccount()
+        {
+            salary = 500;
+
+        }
+        public int BankAccount(int salary)
+        {
+            this.salary = salary;
+            return salary;
+        }
+    }
+}
+
+Main Method:
+  private static void EmpBankAccount()
+        {
+            EmpBankAccount empbank = new EmpBankAccount();
+            Console.WriteLine(empbank.salary);
+            Console.WriteLine(empbank.BankAccount(1200));
+        }
+
+3. EmployeeSalary
+
+Class:
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AssignmentLib
+{
+    public class EmployeeSalary
+    {
+        public int EmployeeId;
+        public string EmpName;
+        public int BasicSalary;
+        public int HRAllowance;
+        public int TravelAllowent;
+
+        public void Employeesalary(int v, string v1)
+        {
+
+        }
+
+        public void EmpSalary(int empid, string empname, int Bsalary, int HRallowance, int travel)
+        {
+            EmployeeId = empid;
+            EmpName = empname;
+            BasicSalary = Bsalary;
+        }
+    }
+}
+
+Main Method:
+ private static void EmployeeSalary()
+        {
+            EmployeeSalary empsal = new EmployeeSalary();
+
+            empsal.EmployeeId = 21172;
+            empsal.EmpName = "Vaishnavi";
+            empsal.BasicSalary = 25000;
+            empsal.HRAllowance = 2000;
+            empsal.TravelAllowent = 1200;
+            Console.WriteLine(empsal.EmployeeId);
+            Console.WriteLine(empsal.EmpName);
+            Console.WriteLine(empsal.BasicSalary);
+            Console.WriteLine(empsal.HRAllowance);
+            Console.WriteLine(empsal.TravelAllowent);
+
+        }
+
+4. Person Age
+
+Class:
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AssignmentLib
+{
+    public class Person
+    {
+            
+       public string Name;
+        public string Address;
+        public int Age;
+
+        public enum Maritalstatus
+        {
+            single, married, divorced, widowed
+        }
+        public Person()
+        {
+
+        }
+        public void PersonDetailes(string name, string address, int age, string maritalsatus)
+        {
+            Name = name;
+            Address = address;
+            Age = age;
+
+        }
+
+        public int GetAge(DateTime dob)
+        {
+            int age = 0;
+            age = DateTime.Now.Subtract(dob).Days;
+            age = age / 365;
+            return age;
+        }
+        public Boolean CanMarry(int age)
+        {
+            if (age < 18)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+    }
+}
+
+Main Method:
+ private static void Person()
+        {
+            Person pr = new Person();
+            DateTime dob = Convert.ToDateTime("28-07-1999");
+            int age = pr.GetAge(dob);
+            Console.WriteLine(age);
+            Console.WriteLine(pr.CanMarry(age));
+        }
